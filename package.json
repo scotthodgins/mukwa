@@ -1,0 +1,25 @@
+{
+  "name": "mukwa",
+  "version": "1.0.0",
+  "description": "Website for Mukwa Adventures",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scotthodgins/mukwa.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scotthodgins/mukwa/issues"
+  },
+  "homepage": "https://github.com/scotthodgins/mukwa#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-pug": "^3.3.0",
+    "gulp-sass": "^3.1.0"
+  }
+}
