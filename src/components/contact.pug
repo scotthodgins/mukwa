@@ -1,1 +1,30 @@
-h2 Contact
+#Contact.section
+  .sectionHeaderFlipped
+    .left.trees
+    .right
+      .title
+        h2 Contact
+      .subtitle
+        span Let's get started!
+
+  .introduction
+    p.
+      Contact Amanda at 1-705-862-1150 to book your next adventure!
+
+  .contactForm
+    label(for="contactName") Your name
+    input(type="text" id="contactName" name="contactName")
+    span.errorMessage#nameError
+
+    label(for="contactEmail") Your email address
+    input(type="text" id="contactEmail" name="contactEmail")
+    span.errorMessage#EmailError
+
+    label(for="contactEmail") Your email address
+    input(type="text" id="contactEmail" name="contactEmail")
+    span.instructions (optional)
+    span.errorMessage#EmailError
+
+    label(for="contactMessage") What would you like to know?
+    textarea(rows="5" cols="50" id="contactMessage" name="contactMessage")
+    span.errorMessage#MessageError
