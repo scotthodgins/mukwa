@@ -11,13 +11,14 @@ html {
 body {
   background: #565;
   color: #444;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Libre Baskerville", serif;
   font-size: 16px;
   line-height: 1.65; }
 
 h1, h2, h3 {
   text-transform: uppercase;
-  margin: 12px 0px; }
+  margin: 12px 0px;
+  font-family: "Open Sans", sans-serif; }
 
 ul {
   padding: 0 0 0 1.5em; }
@@ -39,17 +40,31 @@ a {
 .section {
   padding: 0 40px; }
 
-div {
-  border: 1px solid pink; }
-
 #Welcome .navigation {
-  padding-top: 10px; }
+  padding-top: 20px;
+  margin-bottom: 120px; }
   #Welcome .navigation .logospace {
-    width: 105px; }
+    width: 105px;
+    float: left; }
     #Welcome .navigation .logospace .logo {
       width: 105px;
       height: 105px; }
-  #Welcome .navigation .navspace .navbar a {
-    color: #444;
-    text-transform: uppercase;
-    padding: 0 1em 0 0; }
+  #Welcome .navigation .navspace {
+    float: left;
+    margin-left: 15px;
+    margin-top: 20px; }
+    #Welcome .navigation .navspace .navbar {
+      border-bottom: 2px solid #444;
+      padding-bottom: 8px; }
+      #Welcome .navigation .navspace .navbar a {
+        font-family: "Open Sans", sans-serif;
+        color: #444;
+        text-transform: uppercase;
+        padding: 0 1.7em 0 0; }
+        #Welcome .navigation .navspace .navbar a:last-child {
+          padding: 0 0 0 0 !important; }
+    #Welcome .navigation .navspace .motto {
+      color: #888;
+      font-size: .9em;
+      letter-spacing: .2px;
+      margin-top: 10px; }
