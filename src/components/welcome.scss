@@ -1,0 +1,26 @@
+div {
+  border: 1px solid pink;
+}
+#Welcome {
+  .navigation {
+      padding-top: 10px;
+    .logospace {
+      width: 105px;
+      
+      .logo {
+        width: 105px;
+        height: 105px;
+      }
+    }
+    .navspace {
+      .navbar {
+        
+        a {
+          color: #444;
+          text-transform: uppercase;
+          padding: 0 1em 0 0;
+        }
+      }
+    }
+  }
+}

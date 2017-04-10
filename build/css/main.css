@@ -4,9 +4,52 @@ html {
   padding: 0; }
 
 *, *:before, *:after {
-  box-sizing: inherit; }
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0; }
 
 body {
-  background: teal;
-  color: white;
-  font-family: sans-serif; }
+  background: #565;
+  color: #444;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.65; }
+
+h1, h2, h3 {
+  text-transform: uppercase;
+  margin: 12px 0px; }
+
+ul {
+  padding: 0 0 0 1.5em; }
+
+a {
+  color: #f45111;
+  font-weight: bold;
+  text-decoration: none; }
+  a:hover, a:active {
+    text-decoration: underline; }
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  border-left: 1px solid #444;
+  border-right: 1px solid #444;
+  background: #fff; }
+
+.section {
+  padding: 0 40px; }
+
+div {
+  border: 1px solid pink; }
+
+#Welcome .navigation {
+  padding-top: 10px; }
+  #Welcome .navigation .logospace {
+    width: 105px; }
+    #Welcome .navigation .logospace .logo {
+      width: 105px;
+      height: 105px; }
+  #Welcome .navigation .navspace .navbar a {
+    color: #444;
+    text-transform: uppercase;
+    padding: 0 1em 0 0; }
