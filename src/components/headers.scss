@@ -1,0 +1,46 @@
+.trees, .atvs {
+  background-size: 120px auto;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.trees {
+  background-image: url('../img/trees.svg');
+}
+
+.sectionHeader {
+  position: relative;
+  width: 350px;
+  border-top: 1px solid $black;
+  border-bottom: 1px solid $black;
+  .left {
+    border-right: 1px solid $black;
+    width: 200px;
+    .title {
+      border-bottom: 1px solid $black;
+      padding: 10px;
+      text-align: right;
+      padding-right: 20px;
+      h2 {
+        line-height: 0;
+        color: $black;
+      }
+    }
+    .subtitle {
+      text-align: right;
+      padding: 9px 20px 0 0;
+      height: 50px;
+      span {
+        font-family: $cursive_text;
+        font-size: 18px;
+      }
+    }
+  }
+  .right {
+    width: 150px;
+    height: 95px;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}

@@ -9,7 +9,7 @@ $cursive_text: 'La Belle Aurore', cursive;
 
 // Colors
 
-$black: #444;
+$black: #666;
 $white: #fff;
 $red: rgb(255,92,20);
 
@@ -28,7 +28,7 @@ html {
 
 body {
   background: #565;
-  color: #444;
+  color: $black;
   font-family: $paragraph_text;
   font-size: 16px;
   line-height: 1.65;
@@ -57,6 +57,7 @@ a {
 
 .container {
   max-width: 1024px;
+  width: 100%;
   margin: 0 auto;
   border-left: 1px solid #444;
   border-right: 1px solid #444;

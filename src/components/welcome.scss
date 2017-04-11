@@ -2,8 +2,8 @@ div {
   //background-color: rgba(0,0,0,0.05);
 }
 #Welcome {
-  background: url('../img/hero.jpg');
-  min-height: 566px;
+  background: url('../img/hero.jpg') center top;
+  min-height: 848px; //set to height of background image
   .navigation {
       padding-top: 20px;
       margin-bottom: 120px;
@@ -41,14 +41,21 @@ div {
       }
     }
   }
-  
+  .greeting {
+    margin-top: 220px;
+    text-align: center;
+    .sign {
+      
+    }
+  }
   .pitch {
     color: white;
-    width: 50%;
-    margin: 120px auto 0 auto;
+    width: 80%;
+    max-width: 628px;
+    margin: 80px auto 0 auto;
     padding: 10px 30px 20px 30px;
     border: 10px solid white;
-    background: rgba(0,0,0,0.2);
+    background: url('../img/pitch_background.jpg') center top no-repeat #fff;
 
     h3 {
       color: $red;

@@ -10,7 +10,7 @@ html {
 
 body {
   background: #565;
-  color: #444;
+  color: #666;
   font-family: "Libre Baskerville", serif;
   font-size: 16px;
   line-height: 1.65; }
@@ -32,6 +32,7 @@ a {
 
 .container {
   max-width: 1024px;
+  width: 100%;
   margin: 0 auto;
   border-left: 1px solid #444;
   border-right: 1px solid #444;
@@ -40,9 +41,47 @@ a {
 .section {
   padding: 0 40px; }
 
+.trees, .atvs {
+  background-size: 120px auto;
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+.trees {
+  background-image: url("../img/trees.svg"); }
+
+.sectionHeader {
+  position: relative;
+  width: 350px;
+  border-top: 1px solid #666;
+  border-bottom: 1px solid #666; }
+  .sectionHeader .left {
+    border-right: 1px solid #666;
+    width: 200px; }
+    .sectionHeader .left .title {
+      border-bottom: 1px solid #666;
+      padding: 10px;
+      text-align: right;
+      padding-right: 20px; }
+      .sectionHeader .left .title h2 {
+        line-height: 0;
+        color: #666; }
+    .sectionHeader .left .subtitle {
+      text-align: right;
+      padding: 9px 20px 0 0;
+      height: 50px; }
+      .sectionHeader .left .subtitle span {
+        font-family: "La Belle Aurore", cursive;
+        font-size: 18px; }
+  .sectionHeader .right {
+    width: 150px;
+    height: 95px;
+    position: absolute;
+    top: 0;
+    right: 0; }
+
 #Welcome {
-  background: url("../img/hero.jpg");
-  min-height: 566px; }
+  background: url("../img/hero.jpg") center top;
+  min-height: 848px; }
   #Welcome .navigation {
     padding-top: 20px;
     margin-bottom: 120px; }
@@ -71,13 +110,17 @@ a {
         font-size: .9em;
         letter-spacing: .2px;
         margin-top: 10px; }
+  #Welcome .greeting {
+    margin-top: 220px;
+    text-align: center; }
   #Welcome .pitch {
     color: white;
-    width: 50%;
-    margin: 120px auto 0 auto;
+    width: 80%;
+    max-width: 628px;
+    margin: 80px auto 0 auto;
     padding: 10px 30px 20px 30px;
     border: 10px solid white;
-    background: rgba(0, 0, 0, 0.2); }
+    background: url("../img/pitch_background.jpg") center top no-repeat #fff; }
     #Welcome .pitch h3 {
       color: #ff5c14;
       border-bottom: 1px solid #fff;
