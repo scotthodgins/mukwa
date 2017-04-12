@@ -5,6 +5,7 @@ div {
   background: url('../img/hero.jpg') center top;
   min-height: 848px; //set to height of background image
   .navigation {
+      opacity: .9;
       padding-top: 20px;
       margin-bottom: 120px;
     .logospace {
@@ -27,8 +28,13 @@ div {
           color: #444;
           text-transform: uppercase;
           padding: 0 1.7em 0 0;
+          text-decoration: none;
+          transition: color .2s ease;
           &:last-child {
             padding: 0 0 0 0 !important;
+          }
+          &:hover, &:active {
+            color: $red;
           }
         }
       }

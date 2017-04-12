@@ -1,3 +1,23 @@
-#tours {
-  
+#Tours {
+  .introduction {
+  font-size: 14px;
+  max-width: 800px;
+  padding: 60px 180px 100px 25px;
+  margin: 40px 0 40px 0;
+  text-align: justify;
+  background: url('../img/stamps1.png') no-repeat;
+  background-position: top right;
+  background-size: 370px 200px;
+  transition: background-size .2s ease;
+    @media (max-width: 620px) {
+      padding: 60px 25px 40px 25px;
+    }
+    @media (max-width: 480px) {
+      background-size: 222px 120px;
+    }
+
+    h3 {
+      color: $red;
+    }
+  }
 }
