@@ -13,18 +13,17 @@
 
   .contactForm
     label(for="contactName") Your name
+    span.errorMessage#nameError Please enter your name
     input(type="text" id="contactName" name="contactName")
-    span.errorMessage#nameError
+    
 
     label(for="contactEmail") Your email address
+    span.errorMessage#emailError Please enter your email address
     input(type="text" id="contactEmail" name="contactEmail")
-    span.errorMessage#EmailError
-
-    label(for="contactEmail") Your email address
-    input(type="text" id="contactEmail" name="contactEmail")
-    span.instructions (optional)
-    span.errorMessage#EmailError
+    
 
     label(for="contactMessage") What would you like to know?
+    span.errorMessage#messageError Please leave us a message
     textarea(rows="5" cols="50" id="contactMessage" name="contactMessage")
-    span.errorMessage#MessageError
+    
+    button.submitContactForm Send

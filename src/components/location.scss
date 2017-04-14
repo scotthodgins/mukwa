@@ -1,0 +1,23 @@
+#Location {
+  background: url('../img/location_background.jpg') no-repeat right top;
+  min-height: 718px;
+  margin-top: 50px;
+  .article {
+    border: 10px solid $white;
+    padding: 20px;
+    background: rgba(0,20,30,0.6);
+    margin: 150px auto 50px 0px;
+    color: $white;
+    width: 80%;
+    transition: margin .2s ease;
+    @media (max-width: 680px) {
+      margin: 50px 0 50px 0;
+      width: 100%;
+    }
+    .paragraphIntro {
+      font-weight: bold;
+      font-size: 1.2em;
+      color: $red;
+    }
+  }
+}

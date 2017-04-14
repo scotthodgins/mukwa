@@ -1,19 +1,22 @@
-div {
-  //background-color: rgba(0,0,0,0.05);
-}
 #Welcome {
   background: url('../img/hero.jpg') center top;
   min-height: 848px; //set to height of background image
   .navigation {
-      opacity: .9;
+
       padding-top: 20px;
       margin-bottom: 120px;
     .logospace {
       width: 105px;
       float: left;
+      .logotype {
+        display: none;
+      }
       .logo {
         width: 102px;
         height: 102px;
+      }
+      .navToggle {
+        display: none;
       }
     }
     .navspace {
@@ -46,12 +49,83 @@ div {
         margin-top: 10px;
       }
     }
+    @media (max-width: 680px) {
+      padding-top: 6px;
+      .logospace {
+        position: fixed;
+        top: 0px;
+        right: 0px;
+        left: 0px;
+        padding: 5px;
+        width: 100%;
+        background: white;
+        z-index: 1000;
+        border-bottom: 1px solid lighten($black, 33%);
+        .logo {
+          display: none;
+        }
+        .logotype {
+          display: block !important;
+          text-transform: uppercase;
+          font-weight: bold;
+          width: 300px;
+        }
+        .navToggle {
+          position: absolute;
+          cursor: pointer;
+          top: 8px;
+          right: 8px;
+          display: block;
+          width: 20px;
+          height: 18px;
+          background: url('../img/navToggle.svg') no-repeat;
+          &:hover, &:active {
+            background: url('../img/navToggle_hover.svg') no-repeat;
+          }
+        } 
+      }
+      .navspace {
+        background: #eee;
+        position: fixed;
+        top: -336px;
+        
+        left: 0;
+        right: 0;
+        margin: 0;
+        z-index: 999;
+        transition: top .3s ease;
+        
+        .navbar {
+          padding: 10px 20px;
+          border-bottom: 1px solid lighten($black, 33%);
+          a {
+            display: block;
+            padding: 5px;
+            &:last-child {
+              padding: 5px !important;
+            }
+          }
+        }
+        .motto {
+          display: none;
+        }
+      }
+    }
   }
+
   .greeting {
     margin-top: 220px;
     text-align: center;
+    transition: margin-top .2s ease;
+    @media(max-width:680px) {
+      margin-top: 120px;
+    }
+
     .sign {
-      
+      @media(max-width: 680px) {
+        width: 90%;
+        height: auto;
+      }
     }
   }
   .pitch {
@@ -68,6 +142,10 @@ div {
       border-bottom: 1px solid $white;
       margin-bottom: 20px;
       padding-bottom: 10px;
+    }
+    @media (max-width: 680px) {
+      width: 100%;
+      
     }
   }
 }

@@ -1,11 +1,17 @@
-.trees, .atvs {
+.trees, .atvs, .mountain {
   background-size: 120px auto;
   background-repeat: no-repeat;
   background-position: center center;
 }
 
-.trees {
-  background-image: url('../img/trees.svg');
+.trees    { background-image: url('../img/trees.svg'); }
+.atvs     { background-image: url('../img/atvs.svg'); }
+.mountain { background-image: url('../img/mountain.svg'); }
+
+.sectionHeader, .sectionHeaderFlipped {
+  margin-bottom: 50px;
+  z-index: 0;
+  position: static;
 }
 
 .sectionHeader {
@@ -42,5 +48,48 @@
     position: absolute;
     top: 0;
     right: 0;
+  }
+}
+.sectionHeaderFlipped {
+  position: relative;
+  margin-right: 0px;
+  margin-left: auto;
+  
+  width: 350px;
+  height: 95px;
+  border-top: 1px solid $black;
+  border-bottom: 1px solid $black;
+  .left {
+    border-right: 1px solid $black;
+    width: 150px;
+    height: 94px;
+
+  }
+  .right {
+    width: 200px;
+    height: 95px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    .title {
+      border-bottom: 1px solid $black;
+      padding: 10px;
+      text-align: left;
+      padding-left: 20px;
+
+      h2 {
+        line-height: 0;
+        color: $black;
+      }
+    }
+    .subtitle {
+      text-align: left;
+      padding: 9px 0 0 20px;
+      height: 50px;
+      span {
+        font-family: $cursive_text;
+        font-size: 18px;
+      }
+    }
   }
 }

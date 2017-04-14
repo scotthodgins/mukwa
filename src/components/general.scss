@@ -9,7 +9,7 @@ $cursive_text: 'La Belle Aurore', cursive;
 
 // Colors
 
-$black: #666;
+$black: #444;
 $white: #fff;
 $red: rgb(255,92,20);
 
@@ -54,17 +54,33 @@ a {
   }
 }
 
+p {
+  margin-bottom: 1em;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
 
 .container {
   max-width: 1024px;
+  min-width: 320px;
   width: 100%;
   margin: 0 auto;
   border-left: 1px solid #444;
   border-right: 1px solid #444;
   background: #fff;
+  box-shadow: 0 0 100px rgba(0,0,0,0.3);
+  @media(max-width: 680px) {
+    border: none;
+  }
 }
 
 .section {
   padding: 0 40px;
+  transition: padding .3s ease;
+  @media(max-width: 680px) {
+    padding: 0 10px;
+  }
 }
 

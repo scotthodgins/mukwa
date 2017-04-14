@@ -10,7 +10,7 @@ html {
 
 body {
   background: #565;
-  color: #666;
+  color: #444;
   font-family: "Libre Baskerville", serif;
   font-size: 16px;
   line-height: 1.65; }
@@ -30,18 +30,32 @@ a {
   a:hover, a:active {
     text-decoration: underline; }
 
+p {
+  margin-bottom: 1em; }
+  p:last-child {
+    margin-bottom: 0; }
+
 .container {
   max-width: 1024px;
+  min-width: 320px;
   width: 100%;
   margin: 0 auto;
   border-left: 1px solid #444;
   border-right: 1px solid #444;
-  background: #fff; }
+  background: #fff;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.3); }
+  @media (max-width: 680px) {
+    .container {
+      border: none; } }
 
 .section {
-  padding: 0 40px; }
+  padding: 0 40px;
+  transition: padding .3s ease; }
+  @media (max-width: 680px) {
+    .section {
+      padding: 0 10px; } }
 
-.trees, .atvs {
+.trees, .atvs, .mountain {
   background-size: 120px auto;
   background-repeat: no-repeat;
   background-position: center center; }
@@ -49,22 +63,33 @@ a {
 .trees {
   background-image: url("../img/trees.svg"); }
 
+.atvs {
+  background-image: url("../img/atvs.svg"); }
+
+.mountain {
+  background-image: url("../img/mountain.svg"); }
+
+.sectionHeader, .sectionHeaderFlipped {
+  margin-bottom: 50px;
+  z-index: 0;
+  position: static; }
+
 .sectionHeader {
   position: relative;
   width: 350px;
-  border-top: 1px solid #666;
-  border-bottom: 1px solid #666; }
+  border-top: 1px solid #444;
+  border-bottom: 1px solid #444; }
   .sectionHeader .left {
-    border-right: 1px solid #666;
+    border-right: 1px solid #444;
     width: 200px; }
     .sectionHeader .left .title {
-      border-bottom: 1px solid #666;
+      border-bottom: 1px solid #444;
       padding: 10px;
       text-align: right;
       padding-right: 20px; }
       .sectionHeader .left .title h2 {
         line-height: 0;
-        color: #666; }
+        color: #444; }
     .sectionHeader .left .subtitle {
       text-align: right;
       padding: 9px 20px 0 0;
@@ -79,19 +104,56 @@ a {
     top: 0;
     right: 0; }
 
+.sectionHeaderFlipped {
+  position: relative;
+  margin-right: 0px;
+  margin-left: auto;
+  width: 350px;
+  height: 95px;
+  border-top: 1px solid #444;
+  border-bottom: 1px solid #444; }
+  .sectionHeaderFlipped .left {
+    border-right: 1px solid #444;
+    width: 150px;
+    height: 94px; }
+  .sectionHeaderFlipped .right {
+    width: 200px;
+    height: 95px;
+    position: absolute;
+    top: 0;
+    right: 0; }
+    .sectionHeaderFlipped .right .title {
+      border-bottom: 1px solid #444;
+      padding: 10px;
+      text-align: left;
+      padding-left: 20px; }
+      .sectionHeaderFlipped .right .title h2 {
+        line-height: 0;
+        color: #444; }
+    .sectionHeaderFlipped .right .subtitle {
+      text-align: left;
+      padding: 9px 0 0 20px;
+      height: 50px; }
+      .sectionHeaderFlipped .right .subtitle span {
+        font-family: "La Belle Aurore", cursive;
+        font-size: 18px; }
+
 #Welcome {
   background: url("../img/hero.jpg") center top;
   min-height: 848px; }
   #Welcome .navigation {
-    opacity: .9;
     padding-top: 20px;
     margin-bottom: 120px; }
     #Welcome .navigation .logospace {
       width: 105px;
       float: left; }
+      #Welcome .navigation .logospace .logotype {
+        display: none; }
       #Welcome .navigation .logospace .logo {
         width: 102px;
         height: 102px; }
+      #Welcome .navigation .logospace .navToggle {
+        display: none; }
     #Welcome .navigation .navspace {
       float: left;
       margin-left: 15px;
@@ -115,9 +177,67 @@ a {
         font-size: .9em;
         letter-spacing: .2px;
         margin-top: 10px; }
+    @media (max-width: 680px) {
+      #Welcome .navigation {
+        padding-top: 6px; }
+        #Welcome .navigation .logospace {
+          position: fixed;
+          top: 0px;
+          right: 0px;
+          left: 0px;
+          padding: 5px;
+          width: 100%;
+          background: white;
+          z-index: 1000;
+          border-bottom: 1px solid #989898; }
+          #Welcome .navigation .logospace .logo {
+            display: none; }
+          #Welcome .navigation .logospace .logotype {
+            display: block !important;
+            text-transform: uppercase;
+            font-weight: bold;
+            width: 300px; }
+          #Welcome .navigation .logospace .navToggle {
+            position: absolute;
+            cursor: pointer;
+            top: 8px;
+            right: 8px;
+            display: block;
+            width: 20px;
+            height: 18px;
+            background: url("../img/navToggle.svg") no-repeat; }
+            #Welcome .navigation .logospace .navToggle:hover, #Welcome .navigation .logospace .navToggle:active {
+              background: url("../img/navToggle_hover.svg") no-repeat; }
+        #Welcome .navigation .navspace {
+          background: #eee;
+          position: fixed;
+          top: -336px;
+          left: 0;
+          right: 0;
+          margin: 0;
+          z-index: 999;
+          transition: top .3s ease; }
+          #Welcome .navigation .navspace .navbar {
+            padding: 10px 20px;
+            border-bottom: 1px solid #989898; }
+            #Welcome .navigation .navspace .navbar a {
+              display: block;
+              padding: 5px; }
+              #Welcome .navigation .navspace .navbar a:last-child {
+                padding: 5px !important; }
+          #Welcome .navigation .navspace .motto {
+            display: none; } }
   #Welcome .greeting {
     margin-top: 220px;
-    text-align: center; }
+    text-align: center;
+    transition: margin-top .2s ease; }
+    @media (max-width: 680px) {
+      #Welcome .greeting {
+        margin-top: 120px; } }
+    @media (max-width: 680px) {
+      #Welcome .greeting .sign {
+        width: 90%;
+        height: auto; } }
   #Welcome .pitch {
     color: white;
     width: 80%;
@@ -131,22 +251,215 @@ a {
       border-bottom: 1px solid #fff;
       margin-bottom: 20px;
       padding-bottom: 10px; }
+    @media (max-width: 680px) {
+      #Welcome .pitch {
+        width: 100%; } }
 
-#Tours .introduction {
-  font-size: 14px;
-  max-width: 800px;
-  padding: 60px 180px 100px 25px;
-  margin: 40px 0 40px 0;
-  text-align: justify;
-  background: url("../img/stamps1.png") no-repeat;
-  background-position: top right;
-  background-size: 370px 200px;
-  transition: background-size .2s ease; }
-  @media (max-width: 620px) {
-    #Tours .introduction {
-      padding: 60px 25px 40px 25px; } }
-  @media (max-width: 480px) {
-    #Tours .introduction {
-      background-size: 222px 120px; } }
-  #Tours .introduction h3 {
-    color: #ff5c14; }
+#Tours {
+  margin-top: 30px;
+  background: url("../img/backgroundTours.jpg") no-repeat;
+  background-position: center bottom;
+  background-size: 100%;
+  padding-bottom: 300px; }
+  #Tours .introduction {
+    font-size: 14px;
+    max-width: 800px;
+    padding: 20px 180px 100px 25px;
+    margin: 0px 0 0px 0;
+    text-align: justify;
+    background: url("../img/stamps1.png") no-repeat;
+    background-position: top right;
+    background-size: 370px 200px;
+    transition: background-size .2s ease; }
+    @media (max-width: 620px) {
+      #Tours .introduction {
+        padding: 60px 25px 40px 25px; } }
+    @media (max-width: 480px) {
+      #Tours .introduction {
+        background-size: 222px 120px; } }
+    #Tours .introduction h3 {
+      color: #ff5c14; }
+  #Tours .toursArea .tourBox {
+    position: relative;
+    width: 48%;
+    margin: 1%;
+    padding: 10px 30px;
+    display: inline-block;
+    vertical-align: top;
+    border: 10px solid #fff;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+    min-height: 400px;
+    background: url("../img/tour_background.jpg") no-repeat;
+    transition: border-color .2s ease, box-shadow .2s ease; }
+    #Tours .toursArea .tourBox:hover, #Tours .toursArea .tourBox:active {
+      border-color: #f7f7f7;
+      box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.4); }
+    #Tours .toursArea .tourBox:nth-child(2) {
+      background-position: center top; }
+    #Tours .toursArea .tourBox:nth-child(3) {
+      background-position: right top; }
+    #Tours .toursArea .tourBox:nth-child(4) {
+      background-position: 70% top; }
+    #Tours .toursArea .tourBox .title {
+      font-size: 20px;
+      line-height: 1;
+      color: #ff5c14; }
+    #Tours .toursArea .tourBox .details {
+      margin-top: 20px; }
+      #Tours .toursArea .tourBox .details ul {
+        margin-top: 15px;
+        font-family: "Open Sans", sans-serif;
+        font-size: 14px; }
+        #Tours .toursArea .tourBox .details ul li {
+          margin-bottom: 5px; }
+    #Tours .toursArea .tourBox .footer {
+      height: 50px; }
+      #Tours .toursArea .tourBox .footer .learnMore {
+        background: #ff5c14;
+        color: #fff;
+        border: none;
+        padding: 18px 35px;
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        cursor: pointer;
+        transition: background .2s ease; }
+        #Tours .toursArea .tourBox .footer .learnMore:hover {
+          background: #e04500; }
+    @media (max-width: 680px) {
+      #Tours .toursArea .tourBox {
+        width: 100%; } }
+
+#Location {
+  background: url("../img/location_background.jpg") no-repeat right top;
+  min-height: 718px;
+  margin-top: 50px; }
+  #Location .article {
+    border: 10px solid #fff;
+    padding: 20px;
+    background: rgba(0, 20, 30, 0.6);
+    margin: 150px auto 50px 0px;
+    color: #fff;
+    width: 80%;
+    transition: margin .2s ease; }
+    @media (max-width: 680px) {
+      #Location .article {
+        margin: 50px 0 50px 0;
+        width: 100%; } }
+    #Location .article .paragraphIntro {
+      font-weight: bold;
+      font-size: 1.2em;
+      color: #ff5c14; }
+
+#About {
+  background: url("../img/about_background.jpg") center top; }
+  #About .biography {
+    position: relative;
+    max-width: 586px;
+    min-height: 740px;
+    width: 100%;
+    height: auto; }
+    #About .biography .textbox {
+      text-align: justify;
+      width: 80%;
+      padding: 5px 20px 20px 20px;
+      border: 10px solid white;
+      color: #fff;
+      background: rgba(0, 30, 20, 0.5);
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7); }
+      #About .biography .textbox h3, #About .biography .textbox h4 {
+        color: #ff7f47; }
+  #About .arthur {
+    background: url("../img/guideArthurTrudeau.jpg") no-repeat; }
+    #About .arthur .textbox {
+      position: absolute;
+      bottom: 30px;
+      left: 40px;
+      transition: left .2s ease, bottom .2s ease; }
+      #About .arthur .textbox p {
+        font-size: .8em; }
+      @media (max-width: 680px) {
+        #About .arthur .textbox {
+          left: 0px;
+          bottom: 0px;
+          width: 100%;
+          border: none;
+          background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.55) 16%, rgba(0, 0, 0, 0.55) 99%, rgba(0, 0, 0, 0.55) 100%); } }
+  #About .amanda {
+    background: url("../img/guideAmandaTrudeau.jpg") no-repeat;
+    margin-right: 0;
+    margin-left: auto;
+    margin-top: 50px;
+    font-size: 1em; }
+    #About .amanda .textbox {
+      position: absolute;
+      top: 30px;
+      right: 10px; }
+      @media (max-width: 680px) {
+        #About .amanda .textbox {
+          left: 0px;
+          top: 0px;
+          width: 100%;
+          border: none;
+          background: linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.55) 16%, rgba(0, 0, 0, 0.55) 99%, rgba(0, 0, 0, 0.55) 100%); } }
+
+#Contact {
+  background: url("../img/contactBackground.jpg") no-repeat center 230px;
+  min-height: 900px; }
+  #Contact .introduction {
+    text-align: center;
+    font-family: "La Belle Aurore", cursive;
+    font-size: 1.5em; }
+    @media (max-width: 680px) {
+      #Contact .introduction {
+        font-size: 1.2em; } }
+  #Contact .contactForm {
+    margin: 80px auto 0 auto;
+    border: 10px solid white;
+    max-width: 650px;
+    padding: 20px;
+    background: rgba(0, 30, 20, 0.4); }
+    #Contact .contactForm label, #Contact .contactForm .instructions {
+      font-family: "Open Sans", sans-serif;
+      color: #fff;
+      display: block;
+      margin-bottom: 5px; }
+    #Contact .contactForm input {
+      padding: 5px;
+      color: #777777;
+      border: none;
+      margin-bottom: 30px;
+      width: 100%;
+      max-width: 300px; }
+    #Contact .contactForm textarea {
+      width: 100%;
+      margin-bottom: 30px;
+      height: 150px;
+      border: none; }
+    #Contact .contactForm .errorMessage {
+      display: none;
+      font-size: .7em;
+      font-weight: bold;
+      color: #fff;
+      margin-bottom: -2px;
+      padding: 5px;
+      max-width: 300px;
+      width: 100%;
+      font-family: "Open Sans", sans-serif;
+      background: linear-gradient(to bottom, rgba(255, 72, 0, 0) 0%, rgba(255, 72, 0, 0.65) 100%); }
+    #Contact .contactForm .errorMessage#MessageError {
+      width: 100%; }
+    #Contact .contactForm .submitContactForm {
+      background: #ff5c14;
+      color: #fff;
+      border: none;
+      padding: 18px 35px;
+      bottom: 10px;
+      right: 10px;
+      cursor: pointer;
+      transition: background .2s ease; }
+      #Contact .contactForm .submitContactForm:hover {
+        background: #e04500; }
+    @media (max-width: 680px) {
+      #Contact .contactForm {
+        margin-top: 60px; } }
