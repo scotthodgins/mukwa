@@ -2,7 +2,9 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var pug = require('gulp-pug');
-var colors = require('colors');
+//var colors = require('colors');
+var babel = require('gulp-babel');
+var concat = require('gulp-concat');
 var connect = require('gulp-connect');
 
 gulp.task('pug', function () {
@@ -18,6 +20,15 @@ gulp.task('sass', function () {
     .pipe(autoprefixer({ browsers: ['last 2 versions'] }))
     .pipe(gulp.dest('build/css'))
     .pipe(connect.reload());
+});
+
+gulp.task('scripts', function() {
+  return gulp.src('./src/js/*.js')
+    .pipe(babel({
+      presets: ['es2015']
+    }))
+    .pipe(concat('all.js'))
+    .pipe(gulp.dest('./build/js'));
 });
 
 gulp.task('connect', function () {
@@ -37,10 +48,11 @@ gulp.task('fun', function () {
     "Uncle Owen! Aunt Beru!",
     "Never tell me the odds"
   ];
-  console.log(sayings[Math.floor(Math.random() * sayings.length)].rainbow + "... ".rainbow);
+  console.log("\x1b[35m" + sayings[Math.floor(Math.random() * sayings.length)] + "... \x1b[0m");
 });
 
 gulp.task('watch', function () {
   gulp.watch('src/**/*.pug', ['fun', 'pug']);
   gulp.watch('src/**/*.scss', ['fun', 'sass']);
+  gulp.watch('src/**/*.js', ['fun', 'scripts']);
 });

@@ -6,8 +6,16 @@ function nav() {
   var navToggle = document.getElementsByClassName('navToggle')[0];
   var navspace = document.getElementsByClassName('navspace')[0];
   var logospace = document.getElementsByClassName('logospace')[0];
-
+  
   navToggle.addEventListener("click", function () {
+    toggleNav();
+  });
+
+  navspace.addEventListener("click", function() {
+    toggleNav();
+  });
+
+  function toggleNav() {
     var linksPanelHeight = navspace.offsetHeight;
     var titleBarHeight = logospace.offsetHeight;
     var linksTopPosition = getOffset(navspace);
@@ -17,7 +25,8 @@ function nav() {
       navspace.style.top = "-" + linksPanelHeight + "px";
     }
     
-  });
+  }
+
 }
 
 
