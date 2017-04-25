@@ -19,10 +19,10 @@ $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, 
 $mail->Port = 26;                                    // TCP port to connect to
 
 $mail->setFrom('site@mukwa.ca', 'Mukwa.ca Contact Form');
-$mail->addAddress('amanda@mukwa.ca', 'Amanda Trudeau');     // Add a recipient
+$mail->addAddress('Mukwaadventures@gmail.com', 'Mukwa Adventures');     // Add a recipient
 //$mail->addAddress('ellen@example.com');               // Name is optional
 $mail->addReplyTo($contactEmail, $contactName);
-$mail->addCC('arthur@mukwa.ca');
+//$mail->addCC('arthur@mukwa.ca');
 //$mail->addBCC('bcc@example.com');
 
 //$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments

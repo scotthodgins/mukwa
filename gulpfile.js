@@ -10,7 +10,8 @@ var connect = require('gulp-connect');
 var scriptsList = [
   './src/js/helpers.js',
   './src/js/nav.js',
-  './src/js/tours.js'
+  './src/js/tours.js',
+  './src/js/contact.js'
 ]
 
 gulp.task('pug', function () {
@@ -30,10 +31,10 @@ gulp.task('sass', function () {
 
 gulp.task('scripts', function() {
   return gulp.src(scriptsList)
+    .pipe(concat('all.js'))  
     .pipe(babel({
       presets: ['es2015']
     }))
-    .pipe(concat('all.js'))
     .pipe(gulp.dest('./build/js'));
 });
 
