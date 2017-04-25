@@ -10,6 +10,7 @@
       float: left;
       .logotype {
         display: none;
+        cursor: pointer;
       }
       .logo {
         width: 102px;
@@ -148,4 +149,8 @@
       
     }
   }
+}
+
+.showNav {
+  top: 0px !important;
 }

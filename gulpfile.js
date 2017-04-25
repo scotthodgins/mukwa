@@ -7,6 +7,12 @@ var babel = require('gulp-babel');
 var concat = require('gulp-concat');
 var connect = require('gulp-connect');
 
+var scriptsList = [
+  './src/js/helpers.js',
+  './src/js/nav.js',
+  './src/js/tours.js'
+]
+
 gulp.task('pug', function () {
   gulp.src('src/*.pug')
       .pipe(pug())
@@ -23,7 +29,7 @@ gulp.task('sass', function () {
 });
 
 gulp.task('scripts', function() {
-  return gulp.src('./src/js/*.js')
+  return gulp.src(scriptsList)
     .pipe(babel({
       presets: ['es2015']
     }))
@@ -46,7 +52,8 @@ gulp.task('fun', function () {
     "No, I am your father",
     "Warp 9. Engage!",
     "Uncle Owen! Aunt Beru!",
-    "Never tell me the odds"
+    "Never tell me the odds",
+    "Get in there, you big furry oaf! I don't care what you smell!"
   ];
   console.log("\x1b[35m" + sayings[Math.floor(Math.random() * sayings.length)] + "... \x1b[0m");
 });

@@ -148,7 +148,8 @@ p {
       width: 105px;
       float: left; }
       #Welcome .navigation .logospace .logotype {
-        display: none; }
+        display: none;
+        cursor: pointer; }
       #Welcome .navigation .logospace .logo {
         width: 102px;
         height: 102px; }
@@ -254,6 +255,9 @@ p {
     @media (max-width: 680px) {
       #Welcome .pitch {
         width: 100%; } }
+
+.showNav {
+  top: 0px !important; }
 
 #Tours {
   margin-top: 30px;
